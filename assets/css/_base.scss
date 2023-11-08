@@ -7,9 +7,18 @@
 :root {
   --color1: #fffdfa;
   --color2: #5e607a;
+  --color3: #f15d51;
+  --color4: #00001a;
+  --color5: #e9aa52;
 }
 
-.text-B {
+@mixin custom-media($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+.text-S {
   color: var(--color2);
   font-feature-settings: "clig" off, "liga" off;
   /* Body */
@@ -18,4 +27,59 @@
   font-style: normal;
   font-weight: 400;
   line-height: 26px; /* 173.333% */
+}
+
+.text-M {
+  color: var(--color1);
+  font-feature-settings: "clig" off, "liga" off;
+  /* Heading (S) */
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 24px; /* 120% */
+}
+
+.text-L {
+  color: var(--color5);
+  font-feature-settings: "clig" off, "liga" off;
+  /* Heading (L) */
+  font-family: Inter;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px; /* 100% */
+}
+
+.text-XL {
+  color: var(--color4);
+  font-feature-settings: "clig" off, "liga" off;
+  /* Heading (XL) */
+  font-family: Inter;
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 56px; /* 100% */
+}
+
+.btn {
+  width: 185px;
+  height: 48px;
+  background-color: var(--color3);
+  color: var(--color1);
+  border: none;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 4.375px;
+  text-transform: uppercase;
+
+  &:hover {
+    cursor: pointer;
+    background-color: var(--color4);
+  }
+}
+
+.hidden {
+  display: none !important;
 }
