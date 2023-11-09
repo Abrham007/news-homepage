@@ -1,3 +1,4 @@
+@use "topography";
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +11,7 @@
   --color3: #f15d51;
   --color4: #00001a;
   --color5: #e9aa52;
+  --color6: #c5c6ce;
 }
 
 @mixin custom-media($width) {
@@ -18,7 +20,7 @@
   }
 }
 
-.text-S {
+.text-XXS {
   color: var(--color2);
   font-feature-settings: "clig" off, "liga" off;
   /* Body */
@@ -29,7 +31,18 @@
   line-height: 26px; /* 173.333% */
 }
 
-.text-M {
+.text-XS {
+  color: var(--color4);
+  font-feature-settings: "clig" off, "liga" off;
+  /* Heading (XS) */
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 24px; /* 133.333% */
+}
+
+.text-S {
   color: var(--color1);
   font-feature-settings: "clig" off, "liga" off;
   /* Heading (S) */
@@ -38,6 +51,17 @@
   font-style: normal;
   font-weight: 800;
   line-height: 24px; /* 120% */
+}
+
+.text-M {
+  color: var(--color6);
+  font-feature-settings: "clig" off, "liga" off;
+  /* Heading (M) */
+  font-family: Inter;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px; /* 100% */
 }
 
 .text-L {
@@ -78,8 +102,4 @@
     cursor: pointer;
     background-color: var(--color4);
   }
-}
-
-.hidden {
-  display: none !important;
 }
