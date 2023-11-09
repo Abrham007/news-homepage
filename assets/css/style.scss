@@ -1,4 +1,5 @@
 @use "base";
+@use "topography";
 
 .page {
   width: auto;
@@ -9,6 +10,11 @@
   justify-content: center;
   align-items: center;
   background-color: var(--color1);
+  margin: 100px;
+
+  @include base.custom-media(735px) {
+    margin: 0;
+  }
 }
 
 .header {
@@ -17,12 +23,42 @@
   align-items: center;
   width: 1110px;
   height: auto;
-  position: relative;
+
+  @include base.custom-media(1110px) {
+    width: 730px;
+  }
+
+  @include base.custom-media(735px) {
+    width: 90vw;
+  }
+
+  &__logo {
+    @include base.custom-media(555px) {
+      width: 44.977px;
+      height: 28px;
+      margin-top: 30px;
+    }
+  }
 }
 
 .main-nav {
   display: flex;
   gap: 40px;
+
+  @include base.custom-media(555px) {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 24px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 256px;
+    height: 100vh;
+    background-color: var(--color1);
+    padding: 24px;
+  }
 
   &__link {
     text-decoration: none;
@@ -34,17 +70,25 @@
       cursor: pointer;
       color: var(--color3);
     }
+
+    @include base.custom-media(555px) {
+      font-size: 18px;
+      line-height: 24px;
+    }
   }
 
   &__icon {
     display: none;
     width: 40px;
     height: 17px;
-    background: url(../images/icon-menu.svg) no-repeat 0 0 / 100% 100%;
 
-    @include base.custom-media(455px) {
+    margin-left: auto;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+
+    @include base.custom-media(555px) {
       display: inline;
-      align-self: flex-end;
     }
   }
 }
@@ -60,10 +104,43 @@
     "img img aside"
     "header text aside";
 
+  @include base.custom-media(1110px) {
+    width: 730px;
+    height: auto;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+      "img img"
+      "header aside"
+      "text aside";
+  }
+
+  @include base.custom-media(730px) {
+    width: 343px;
+    height: auto;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:
+      "img"
+      "img"
+      "header"
+      "text"
+      "aside"
+      "aside";
+  }
+
   &__img {
     width: 100%;
     height: 100%;
+    background-image: url(../images/image-web-3-desktop.jpg);
+    background-size: 100% 300px;
     grid-area: img;
+
+    @include base.custom-media(730px) {
+      background-image: url(../images/image-web-3-mobile.jpg);
+      background-size: 343px auto;
+      background-repeat: no-repeat;
+    }
   }
 
   &__header {
@@ -87,13 +164,43 @@
 .aside {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   background-color: var(--color4);
   padding: 32px 24px;
 
   &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 8;
     border-bottom: 1px solid var(--color2);
   }
 
-  &__header {
+  &__header:hover {
+    cursor: pointer;
+    color: var(--color5);
+  }
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+
+  &__item {
+    width: 350px;
+    display: flex;
+    gap: 24px;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  &__header:hover {
+    cursor: pointer;
+    color: var(--color3);
   }
 }
