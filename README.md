@@ -24,7 +24,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [solution URL](https://github.com/Abrham007/news-homepage.git)
-- Live Site URL: [live site URL](https://abrham007.github.io/news-homepage-app/)
+- Live Site URL: [live site URL](https://abrham007.github.io/news-homepage/)
 
 ## My process
 
