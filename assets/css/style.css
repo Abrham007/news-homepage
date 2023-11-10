@@ -41,6 +41,9 @@
   font-weight: 400;
   line-height: 26px; /* 173.333% */
 }
+.text-XXS--alt {
+  color: var(--color6);
+}
 
 .text-XS {
   color: var(--color4);
@@ -266,15 +269,16 @@
 .aside {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
   background-color: var(--color4);
   padding: 32px 24px;
 }
 .aside__item {
   display: flex;
   flex-direction: column;
-  gap: 8;
+  gap: 8px;
   border-bottom: 1px solid var(--color2);
+  padding-bottom: 30px;
 }
 .aside__header:hover {
   cursor: pointer;
